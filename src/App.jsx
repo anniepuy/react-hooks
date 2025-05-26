@@ -1,3 +1,12 @@
+/*
+App Name: React Hooks Example
+Author: Ann Hagan
+Date: 2025-05-26
+Description: A simple React application demonstrating the use of hooks for state management and side effects.
+Page: App.jsx
+*/
+
+
 import { useState, useEffect } from 'react';
 
 const App = () => {
