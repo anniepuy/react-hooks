@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const App = () => {
     let [count, setCount] = useState(0);
@@ -6,6 +6,10 @@ const App = () => {
     const addIncrement = () =>  setCount(count + 1);
     const addDecrement = () => setCount(count - 1);
     const resetZero = () => setCount(0);
+
+    useEffect(() => {
+        console.log('useEffect called');
+    });
 
   return (
     <>
