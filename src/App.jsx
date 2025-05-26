@@ -1,54 +1,13 @@
-/*
-App Name: React Hooks Example
-Author: Ann Hagan
-Date: 2025-05-26
-Description: A simple React application demonstrating the use of hooks for state management and side effects.
-Page: App.jsx
-*/
-
-
-import { useState, useEffect } from 'react';
-import BlocksComponent from './Blocks.jsx';
-
+import UseEffectComponent from "./UseEffect";
+import UseRefComponent from "./UseRef";
 const App = () => {
-    let [count, setCount] = useState(0);
-    let [animal, setAnimal] = useState(
-        ['dog', 'cat', 'bird', 'fish'][Math.floor(Math.random() * 4)]
+    return (
+        <div>
+            {UseEffectComponent}
+            <p>This is a simple application demonstrating the use of React hooks.</p>
+            {UseRefComponent}
+        </div>
     );
-
-    let [block, setBlock] = useState(false);
-
-    const addIncrement = () =>  setCount(count + 1);
-    const addDecrement = () => setCount(count - 1);
-    const resetZero = () => setCount(0);
-
-    useEffect(() => {
-        console.log(animal);
-    }, [animal]);
-    
-    useEffect(() => {
-        console.log(count);
-    }, [count]);
-
-  return (
-    <>
-      <h3>Count: {count}</h3>
-      <button onClick={addIncrement}> +1 </button>
-      <button onClick={addDecrement}> -1 </button>
-      <button onClick={resetZero}> Set to zero </button>
-      <hr/>
-      <h3>{animal}</h3>
-      <button onClick={() => setAnimal(['dog', 'cat', 'bird', 'fish'][Math.floor(Math.random() * 4)])}>
-        Change animal
-        </button>
-    <hr/>
-    {block ? 
-        <BlocksComponent /> : null
-    }
-    <button onClick={() => setBlock(!block)}>Block</button>
-
-    </>
-  );
 }
 
 export default App;
