@@ -8,12 +8,15 @@ Page: App.jsx
 
 
 import { useState, useEffect } from 'react';
+import BlocksComponent from './Blocks.jsx';
 
 const App = () => {
     let [count, setCount] = useState(0);
     let [animal, setAnimal] = useState(
         ['dog', 'cat', 'bird', 'fish'][Math.floor(Math.random() * 4)]
     );
+
+    let [block, setBlock] = useState(false);
 
     const addIncrement = () =>  setCount(count + 1);
     const addDecrement = () => setCount(count - 1);
@@ -38,6 +41,11 @@ const App = () => {
       <button onClick={() => setAnimal(['dog', 'cat', 'bird', 'fish'][Math.floor(Math.random() * 4)])}>
         Change animal
         </button>
+    <hr/>
+    {block ? 
+        <BlocksComponent /> : null
+    }
+    <button onClick={() => setBlock(!block)}>Block</button>
 
     </>
   );
